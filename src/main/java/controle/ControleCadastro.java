@@ -24,6 +24,11 @@ public class ControleCadastro {
         String cpd = tela.getjTextFieldCPD().getText();
         String senha = tela.getjPasswordFieldSenha().getText();
         
+        if (nome.isEmpty() || contato.isEmpty() || cpd.isEmpty() || senha.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "TODOS OS CAMPOS SÃO OBRIGATORIOS!");
+        return;
+        }
+        
         Pessoa salvarPessoa = new Pessoa(nome, contato, cpd, senha);
         
         try {
@@ -31,6 +36,7 @@ public class ControleCadastro {
         Connection conexao = new Conexao().getConnection();
         UsuarioDAO usuarioDao = new UsuarioDAO(conexao);
         usuarioDao.insert(salvarPessoa);
+        
         
         JOptionPane.showMessageDialog(null, "CADASTRO FEITO COM SUCESSO!");
         

@@ -31,6 +31,11 @@ public class ControleItens {
         String descricao = tela.getjTextAreaDescricao().getText();
         String local = tela.getjTextFieldLocal().getText();
         String data_achado = dataString;
+        
+        if (descricao.isEmpty() || local.isEmpty() || diaString.isEmpty() || mesString.isEmpty() || anoString.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "TODOS OS CAMPOS SÃO OBRIGATORIOS!");
+        return;
+        }
                 
         ItemAchado salvarItem = new ItemAchado(descricao, local, data_achado);
         

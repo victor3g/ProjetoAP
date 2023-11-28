@@ -2,8 +2,6 @@ package Usuario;
 
 public class Administrador {
     private int idadm;
-    private String nome;
-    private String contato;
     private String cpd;
     private String senha;
 
@@ -19,22 +17,6 @@ public class Administrador {
 
     public void setIdAdministrador(int idadm) {
         this.idadm = idadm;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getContato() {
-        return contato;
-    }
-
-    public void setContato(String contato) {
-        this.contato = contato;
     }
 
     public String getCPD() {
